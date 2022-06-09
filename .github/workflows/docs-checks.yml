@@ -31,9 +31,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-td${{ env.TIME_PERIOD }}-${{ hashFiles('requirements/base.txt') }}
+          key: ${{ runner.os }}-docs-test-pip-td${{ env.TIME_PERIOD }}-${{ hashFiles('requirements/*.txt') }}
           restore-keys: |
-            ${{ runner.os }}-pip-td${{ env.TIME_PERIOD }}-
+            ${{ runner.os }}-docs-test-pip-td${{ env.TIME_PERIOD }}-
 
       - name: Install dependencies
         run: |
@@ -73,9 +73,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements/base.txt') }}
+          key: ${{ runner.os }}-docs-make-pip-${{ hashFiles('requirements/base.txt') }}
           restore-keys: |
-            ${{ runner.os }}-pip-
+            ${{ runner.os }}-docs-make-pip-
 
       - name: Install dependencies
         run: |
